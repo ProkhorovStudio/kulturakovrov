@@ -18,14 +18,11 @@ $wishCountItems = 0;
 if(Loader::IncludeModule('ldo.favorites')){
     $wishCountItems = Favorites::getCount();
 }
-
 ?>
-
 <html lang="ru">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="format-detection" content="telephone=no" />
-
 <?
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/bootstrap-grid.css");
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/assets/css/style.css");
@@ -41,7 +38,6 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/main.js");
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/fancybox.min.js");
 
 ?>
-
 <?/* Если мы находимся на главной */?>
 <? if ($APPLICATION->GetCurPage(false) === '/'): ?>
     <?
@@ -56,11 +52,9 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/fancybox.min.js");
 <? endif; ?>
 <?$APPLICATION->ShowHead();?>
 <title><?$APPLICATION->ShowTitle()?></title>
-
 </head>
 <?$APPLICATION->ShowPanel()?>
 <body>
-
 <?
 $hide = 1;
 if(!$hide):?>
