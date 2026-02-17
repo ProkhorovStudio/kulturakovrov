@@ -1,0 +1,10 @@
+
+.bx-breadcrumb .bx-breadcrumb-item {
+	float: left;
+	white-space: nowrap;
+	line-height: 13px;
+	vertical-align: middle;
+}
+
+.bx-breadcrumb .bx-breadcrumb-item a {border-bottom: none;}
+.bx-breadcrumb .bx-breadcrumb-item a:hover {}

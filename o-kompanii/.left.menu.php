@@ -1,0 +1,40 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Пресса о нас",
+		"/o-kompanii/pressa-o-nas/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+    Array(
+        "Коллаборации",
+        "/o-kompanii/kollaboracii/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Помощь",
+        "/o-kompanii/faq/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Услуги",
+        "/o-kompanii/uslugi/",
+        Array(),
+        Array(),
+        ""
+    ),
+    Array(
+        "Привилегии",
+        "/o-kompanii/privilegii/",
+        Array(),
+        Array(),
+        ""
+    )
+);
+?>
+

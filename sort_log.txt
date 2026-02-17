@@ -1,0 +1,192 @@
+2025-05-05 10:20:37 - Array
+(
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:20:49 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:20:54 - Array
+(
+    [sortten] => show_counter
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:21:19 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:21:27 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:24:13 - Array
+(
+    [sortten] => name
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:24:15 - Array
+(
+    [sortten] => show_counter
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:24:26 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:25:27 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 20db9ffa3d1fc46ff212802ad1a06993
+    [PHPSESSID] => 7HD7pCedUSGhAvj21c9B6fUD1aH1YFNW
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+)
+
+2025-05-05 10:25:29 - Array
+(
+    [sortten] => name
+    [BX_USER_ID] => 20db9ffa3d1fc46ff212802ad1a06993
+    [PHPSESSID] => 7HD7pCedUSGhAvj21c9B6fUD1aH1YFNW
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+)
+
+2025-05-05 10:25:31 - Array
+(
+    [sortten] => show_counter
+    [BX_USER_ID] => 20db9ffa3d1fc46ff212802ad1a06993
+    [PHPSESSID] => 7HD7pCedUSGhAvj21c9B6fUD1aH1YFNW
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+)
+
+2025-05-05 10:25:40 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:27:33 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:28:28 - Array
+(
+    [sortten] => name
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:29:45 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
+2025-05-05 10:30:28 - Array
+(
+    [sortten] => catalog_PRICE_1
+    [BX_USER_ID] => 3430185c6893c8612b453ee09734157e
+    [BITRIX_SM_LOGIN] => admin
+    [_ym_uid] => 1742982770494899222
+    [_ym_d] => 1742982770
+    [BITRIX_SM_SALE_UID] => 0
+    [PHPSESSID] => XHYmuUD2qEAx7RMgVa001huAyjM11LOO
+    [BITRIX_CONVERSION_CONTEXT_s1] => {"ID":1,"EXPIRE":1746478740,"UNIQUE":["conversion_visit_day"]}
+    [BITRIX_SM_SOUND_LOGIN_PLAYED] => Y
+)
+
