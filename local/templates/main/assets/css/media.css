@@ -1,4 +1,5 @@
 @media (max-height:823px) {
+
     section.sthree{
         height: 100% !important;
         padding-top: 50px;
@@ -349,6 +350,10 @@
 }
 @media (max-width:1200px) {
 
+    .product-after-name__right-block a{
+        font-size:14px;
+    }
+
     /*Новая шапка*/
     .soc-line-header .phone-header{
         display: none;
@@ -673,6 +678,17 @@
     }
 }
 @media (max-width:992px) {
+    .product-after-name.new-block{
+        display: block;
+    }
+    .product-after-name__right-block a{
+        margin-top: 10px;
+        padding-left: 24px;
+        display: block;
+    }
+    .product-after-name__right-block a:before{
+        left: 0;
+    }
     /*Новая шапка сайта*/
     header .right-block-new{
         padding-top: 0;
@@ -1457,6 +1473,15 @@
     }
 }
 @media (max-width:768px) {
+    .product-after-name__right-block a{
+        margin-top: 15px;
+        display: block;
+        font-size: 16px;
+        padding-left: 25px;
+    }
+    .product-after-name__right-block a:before{
+        left: 0;
+    }
 
     /*Слайдер помещений, 1 слайд*/
     section.sthree .image-one{
@@ -2276,7 +2301,7 @@
     }
     /*Контакты*/
     .contact-page input#politika-contacts{
-        opacity: 0;
+        opacity: 1;
     }
 
     /**/

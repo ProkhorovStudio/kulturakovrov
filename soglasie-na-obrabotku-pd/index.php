@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Согласие посетителя сайта на обработку персональных данных");
+$APPLICATION->SetPageProperty("description", "Согласие посетителя сайта на обработку персональных данных в магазине ковров KULTURAKOVROV");
 $APPLICATION->SetTitle("Согласие посетителя сайта на обработку персональных данных");
 ?>
 

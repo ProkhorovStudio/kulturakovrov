@@ -253,20 +253,7 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
 
 <?if($USER->IsAdmin()):?>
 
-    <?php
 
-    //$id = 9747;
-    //$newFileName = "kover-blank-2968-1.jpg";
-
-    //echo "<pre>";
-    //print_r($actualItem['MORE_PHOTO']);
-
-    //echo "</pre>";
-    //$connection = \Bitrix\Main\Application::getConnection();
-    //$connection->query('UPDATE b_file SET FILE_NAME = "'.$newFileName.'" WHERE ID = '.$id);
-    //print_r($connection);
-
-    ?>
 <?endif;?>
 
 
@@ -286,6 +273,8 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                         <h1 class="bx-title"><?if($artikles[0] != 1341 ):?>Ковер <?endif;?><?=$name?></h1>
                     </div>
 
+
+
                     <div class="product-after-name">
                         <?if($method == 'Ручная работа'):?>
                             <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
@@ -302,6 +291,7 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                     <?if($arResult['DETAIL_TEXT'] != ''):?>
                         <div class="button-more-desc">Полное описание</div>
                     <?endif;?>
+
                 </div>
             <?endif;?>
             <?
@@ -356,29 +346,48 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
         <?if(!$isMobile):?>
         <div class="col-md-6 col-sm-12">
             <div class="card-product">
+
+
                 <div class="pk-top d-none d-md-block">
                     <div class="artikul">Артикул: <span data-entity="artikul"><?=$artikles[0];?></span></div>
                     <div class="product-title">
                         <h1 class="bx-title"><?if($artikles[0] != 1341 ):?>Ковер <?endif;?><?=$name?></h1>
                     </div>
-                    <div class="product-after-name">
+                        <div class="product-after-name new-block">
+                            <div class="product-after-name__left-block">
+                                <?if($method == 'Ручная работа'):?>
+                                    <p class="material_type">Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
+                                <?else:?>
+                                    <p class="material_type"><span class="material"><?=$material[0]?></span>.</p>
+                                <?endif;?>
 
-                        <?if($method == 'Ручная работа'):?>
-                            <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
-                        <?else:?>
-                            <p><span class="material"><?=$material[0]?></span>.</p>
-                        <?endif;?>
+                                <?if($colorsName):?>
+                                    <p class="colors">
+                                        <?=implode(',&nbsp ', $colorsName); ?>
+                                    </p>
+                                <?endif;?>
+                                <?if($arResult['DETAIL_TEXT'] != ''):?>
+                                <div class="button-more-desc">Полное описание</div>
+                                <?endif;?>
+                            </div>
 
-                        <?if($colorsName):?>
-                            <p class="colors">
-                                <?=implode(',&nbsp ', $colorsName); ?>
-                            </p>
-                        <?endif;?>
+                            <div class="product-after-name__right-block">
+
+                                <?if($arResult['PROPERTIES']['ATT_MODEL']['VALUE']):
+                                    $file = CFile::getPath($arResult['PROPERTIES']['ATT_MODEL']['VALUE']); ?>
+                                    <?if($file):?>
+                                        <a target="_blank" href="<?=$file?>" class="href">Скачать 3D модель</a>
+                                    <?endif?>
+                                <?endif;?>
+                            </div>
+                            
+                        </div>
+
+
                     </div>
-                    <?if($arResult['DETAIL_TEXT'] != ''):?>
-                        <div class="button-more-desc">Полное описание</div>
-                    <?endif;?>
-                </div>
+
+
+
                 <?endif?>
 
                 <div class="properties-top">
@@ -523,17 +532,7 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                     $newPrice = $price['BASE_PRICE'] / $sqw;
                     $roundPr = customRound($newPrice );
 
-                    if($USER->isAdmin()){
-                       // print_r($newPrice);
-                       // print_r($roundPr);
-                    }
-
-
-
-
-
                     $priceNew = number_format($roundPr,0,'', ' ');
-
 
                     $price['PRINT_RATIO_PRICE'] = 'от '.$priceNew;
                 }
@@ -559,6 +558,16 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                                 <div class="avaliable">В наличии</div>
                                 <div class="vivoz ">Самовывоз: <span>Сегодня</span> (Кутузовский пр-т, 22)</div>
                                 <div class="delivery">Доставка: <span>1-5 дней</span> <span  class="more_delivery">Подробнее</span></div>
+                                <?if($isMobile):?>
+                                <div class="product-after-name__right-block">
+                                    <?if($arResult['PROPERTIES']['ATT_MODEL']['VALUE']):
+                                        $file = CFile::getPath($arResult['PROPERTIES']['ATT_MODEL']['VALUE']); ?>
+                                        <?if($file):?>
+                                        <a target="_blank" href="<?=$file?>" class="href">Скачать 3D модель</a>
+                                    <?endif?>
+                                </div>
+                                    <?endif;?>
+                                <?endif;?>
                             </div>
                         </div>
                     </div>
@@ -642,7 +651,59 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
 
                     </div>
                 </div>
-                <?if($arResult['DETAIL_TEXT'] != ''):?>
+                
+
+                <?php if (strpos($_SERVER['REQUEST_URI'], "test-123") !== false){ ?>
+                            <?if($arResult['DETAIL_TEXT'] != ''):?>
+    <div class="description-block">
+        <div class="description-block__title">
+            описание
+        </div>
+        <div class="description-block__info">
+            <?php
+            if (
+                $arResult['PREVIEW_TEXT'] != ''
+                && (
+                    $arParams['DISPLAY_PREVIEW_TEXT_MODE'] === 'S'
+                    || ($arParams['DISPLAY_PREVIEW_TEXT_MODE'] === 'E' && $arResult['DETAIL_TEXT'] == '')
+                )
+            )
+            {
+                echo $arResult['PREVIEW_TEXT_TYPE'] === 'html' ? $arResult['PREVIEW_TEXT'] : '<p>'.$arResult['PREVIEW_TEXT'].'</p>';
+            }
+
+            if ($arResult['DETAIL_TEXT'] != '')
+            {
+                echo $arResult['DETAIL_TEXT_TYPE'] === 'html' ? $arResult['DETAIL_TEXT'] : '<p>'.$arResult['DETAIL_TEXT'].'</p>';
+            }
+            ?>
+        </div>
+    </div>
+
+<?elseif($arResult['DETAIL_TEXT'] == '' && $arResult["CATEGORY_PATH"] == 'Ковры по стилям/Винтажные ковры'):?>
+    <div class="description-block description-block--vintage">
+        <div class="description-block__title">
+            описание
+        </div>
+        <div class="description-block__info">
+            Купить <?if($artikles[0] != 1341 ):?>ковер <?endif;?><?=$name?> производитель <?= $arResult["OFFERS"][0]["PROPERTIES"]["Proizvoditel"]["VALUE"] ?>. Размером <?= $arResult["OFFERS"][0]["PROPERTIES"]["Razmer_teh"]["VALUE"] ?> см. <?if($colorsName):?> <?$colorsName = array_map(function($color) {return mb_strtolower($color, 'UTF-8');}, $colorsName);?> С цветами: <?=implode(',&nbsp ', $colorsName); ?><?endif;?>. Материал данного ковра <?=$material[0]?></p>
+        </div>
+    </div>
+
+<?//else:?>
+    <!-- <div class="description-block">
+        <div class="description-block__title">
+            описание
+        </div>
+        <div class="description-block__info">
+            <p>Описание товара отсутствует.</p>
+        </div>
+    </div> -->
+
+<?endif;?>
+                        <?php } else { ?>
+
+                        <?if($arResult['DETAIL_TEXT'] != ''):?>
                     <div class="description-block">
                         <div class="description-block__title">
                             описание
@@ -669,6 +730,8 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
 
                     </div>
                 <?endif;?>
+
+                        <?php } ?>
 
                 <div class="options-block">
                     <div class="options-block__title">характеристики</div>
@@ -783,6 +846,9 @@ if($USER->IsAdmin()):?>
 <?php
 endif;
 ?>
+
+
+
 <div class="row">
     <div class="col-lg-12">
         <p class="title-recomendation">рекомендации для вас</p>

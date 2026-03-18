@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Политика в отношении обработки персональных данных");
+$APPLICATION->SetPageProperty("description", "Политика в отношении обработки персональных данных в салоне  ковров KULTURAKOVROV");
 $APPLICATION->SetTitle("Политика в отношении обработки персональных данных");
 ?><div class="container services-page">
 	<div class="row one-block">

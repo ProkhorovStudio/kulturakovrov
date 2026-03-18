@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Часто задаваемые вопросы");
+$APPLICATION->SetPageProperty("description", "Часто задаваемые вопросы в магазине ковров KULTURAKOVROV");
 $APPLICATION->SetTitle("Часто задаваемые вопросы");
 ?>
 

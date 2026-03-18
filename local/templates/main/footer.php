@@ -92,14 +92,13 @@ if (!in_array($thisLink, $notView)): ?>
     <div class="container">
         <div class="row footer-bottom">
             <div class="col-lg-3">
-                ООО "Культура ковров", все права защищены.
+                © 2026 ООО "Культура ковров", все права защищены.
             </div>
             <div class="col-lg-6">
                 <a href="/politika-pd/" target="_blank" class="footer-politica">Политика в отношении персональных данных</a>
                 <a href="/СОУТ_сводная_ведомость_и_план_мероприятий.pdf" target="_blank" class="footer-sout">СОУТ</a>
             </div>
             <div class="col-lg-3">
-                <a class="footer-developer" target="_blank" href="https://prokhorov.studio/">Разработка и продвижение: prokhorov.studio</a>
             </div>
         </div>
     </div>
@@ -210,7 +209,7 @@ if (!in_array($thisLink, $notView)): ?>
             </div>
             <div class="row footer-bottom">
                 <div class="col-lg-3">
-                    ООО "Культура ковров", все права защищены.
+                    © 2026 ООО "Культура ковров", все права защищены.
                 </div>
                 <div class="col-lg-6">
                     <a href="/politika-pd/" target="_blank" class="footer-politica">Политика в отношении персональных данных</a>
@@ -218,7 +217,6 @@ if (!in_array($thisLink, $notView)): ?>
                     <a href="/СОУТ_сводная_ведомость_и_план_мероприятий.pdf" target="_blank" class="footer-sout">СОУТ</a>
                 </div>
                 <div class="col-lg-3">
-                    <a class="footer-developer" target="_blank" href="https://prokhorov.studio/">Разработка и продвижение: prokhorov.studio</a>
                 </div>
             </div>
         </div>
@@ -602,5 +600,37 @@ $template = 'menu-mobile-new';
 <script async src="https://cdn.untarget.ai/untarget.min.o.js">
 </script>-->
 <!-- UNTARGET.AI code -->
+
+<?
+
+$ogTitle = $APPLICATION->GetProperty("title");
+$ogDescription = $APPLICATION->GetProperty("description");
+$ogImage = $APPLICATION->GetProperty("og_image");
+
+if (!$ogTitle) $ogTitle = $APPLICATION->GetTitle();
+if (!$ogTitle) $ogTitle = "KULTURAKOVROV";
+if (!$ogDescription) $ogDescription = "Салон ковров KULTURAKOVROV — винтажные и современные ковры ручной работы в Москве";
+if (!$ogImage) $ogImage = "/local/templates/main/assets/images/logo-footer.png";
+
+$protocol = CMain::IsHTTPS() ? "https://" : "http://";
+$ogUrl = $protocol . $_SERVER["HTTP_HOST"] . $APPLICATION->GetCurPageParam("", ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]);
+$ogImageFull = $protocol . $_SERVER["HTTP_HOST"] . $ogImage;
+
+$ogMeta = '
+<!-- OpenGraph Meta Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="KULTURAKOVROV" />
+<meta property="og:title" content="'.htmlspecialcharsbx($ogTitle).'" />
+<meta property="og:description" content="'.htmlspecialcharsbx($ogDescription).'" />
+<meta property="og:image" content="'.$ogImageFull.'" />
+<meta property="og:image:secure_url" content="'.$ogImageFull.'" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="'.htmlspecialcharsbx($ogUrl).'" />
+<meta property="og:locale" content="ru_RU" />
+';
+
+$APPLICATION->AddHeadString($ogMeta);
+?>
 </body>
 </html>

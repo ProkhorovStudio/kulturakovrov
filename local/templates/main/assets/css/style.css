@@ -3491,6 +3491,7 @@ div[data-slick-index="3"] .image-three{
 	cursor: pointer;
 	margin-top: 15px;
 	margin-bottom: 20px;
+	padding-left: 30px;
 }
 .contact-page input#politika-contacts:checked + label i:before {
 	content: '';
@@ -4297,4 +4298,32 @@ footer .line-footer-soc a{
 	display: block;
 	width: 21px;
 	height: 20px;
+}
+/*Карточка товара*/
+.product-after-name__left-block p:first-child{
+	margin-top: 9px;
+	margin-bottom: 5px;
+}
+.product-after-name__left-block p{
+	margin: 0;
+}
+.product-after-name.new-block{
+	display: flex;
+	align-items:end;
+	justify-content: space-between;
+}
+.product-after-name__right-block a{
+	text-decoration: none;
+	color:#B7814B;
+	position:relative;
+}
+.product-after-name__right-block a:before{
+	content:'';
+	background: url('../icons/load-icon.svg') no-repeat;
+	display: block;
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	left: -26px;
+	top: 2px;
 }

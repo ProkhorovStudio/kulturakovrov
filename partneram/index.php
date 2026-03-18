@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Партнерская программа");
+$APPLICATION->SetPageProperty("description", "Партнерская программа KulturaKovrov в салоне ковров");
 
 $APPLICATION->SetTitle("Партнерская программа");
 ?>

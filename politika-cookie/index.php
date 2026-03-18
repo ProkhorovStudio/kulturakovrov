@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Политика обработки файлов cookie");
+$APPLICATION->SetPageProperty("description", "Политика обработки файлов cookie в магазине ковров KULTURAKOVROV");
 $APPLICATION->SetTitle("Политика обработки файлов cookie");
 ?>
 

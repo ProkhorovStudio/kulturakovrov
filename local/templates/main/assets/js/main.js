@@ -520,6 +520,20 @@ $(document).on('click', '.modal .close', function() {
     $('.modal input[name="data-counter"]').val('');
 })
 
+$(document).on('click', '.manager-block .manager-block__description .manager-block__description-buttons span', function() {
+    ym(100102212, 'reachGoal', 'klik-ekspert');
+    console.log('klik-ekspert ok');
+});
+
+$(document).on('click', '.manager-block .manager-block__description .manager-block__description-buttons .tg-chat', function() {
+    ym(100102212, 'reachGoal', 'klik-ekspert');
+    console.log('klik-ekspert ok');
+});
+
+$(document).on('click', '.manager-block .manager-block__description .manager-block__description-buttons .wh-chat', function() {
+    ym(100102212, 'reachGoal', 'klik-ekspert');
+    console.log('klik-ekspert ok');
+});
 
 
 

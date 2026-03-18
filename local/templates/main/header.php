@@ -50,8 +50,14 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/assets/js/fancybox.min.js");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
 <? endif; ?>
+
+
 <?$APPLICATION->ShowHead();?>
 <title><?$APPLICATION->ShowTitle()?></title>
+<meta name="yandex-verification" content="e594861372693d62" />
+<meta name="google-site-verification" content="UnUhD0kGD3G913nn1UokzKLQCaDQx4G0BQ62VQvrKb8" />
+
+
 </head>
 <?$APPLICATION->ShowPanel()?>
 <body>

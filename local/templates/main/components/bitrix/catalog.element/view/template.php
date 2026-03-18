@@ -285,14 +285,26 @@ $imageModal = $pkPhotos[0];
                     <div class="product-title">
                         <h1 class="bx-title"><?if($artikles[0] != 1341 ):?>Ковер <?endif;?><?=$name?></h1>
                     </div>
-                    <div class="product-after-name">
-                        <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
+                    
+                    <div class="product-after-name new-block">
+                        <div class="product-after-name__left-block">
+                            <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
 
-                        <?if($colorsName):?>
-                            <p class="colors">
-                                <?=implode(',&nbsp ', $colorsName); ?>
-                            </p>
-                        <?endif;?>
+                            <?if($colorsName):?>
+                                <p class="colors">
+                                    <?=implode(',&nbsp ', $colorsName); ?>
+                                </p>
+                            <?endif;?>
+                        </div>
+                        <div class="product-after-name__right-block">
+
+                            <?if($arResult['PROPERTIES']['ATT_MODEL']['VALUE']):
+                                $file = CFile::getPath($arResult['PROPERTIES']['ATT_MODEL']['VALUE']); ?>
+                                <?if($file):?>
+                                <a target="_blank" href="<?=$file?>" class="href">Скачать 3D модель</a>
+                            <?endif?>
+                            <?endif;?>
+                        </div>
                     </div>
 
                     <div class="properties-top">
