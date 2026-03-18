@@ -11,17 +11,17 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-?>
 
+?>
 <main class="main-content">
     <section class="slideshow new">
         <div class="slideshow-inner">
             <div class="slides">
 <div id="slider-top" class="slider-index">
-
 	<?
     $i = 1;
-    foreach ($arResult['ITEMS'] as $arItem):?>
+    foreach ($arResult['ITEMS'] as $arItem):
+        ?>
         <div class="slide <?echo ($i == 1 ? 'is-active': '')?> ">
             <div class="slide-content">
                 <div class="bottom caption">
@@ -38,7 +38,13 @@ $this->setFrameMode(true);
                 </div>
             </div>
             <div class="image-container sl-<?=$i?>">
-                <img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>"  class="image" />
+                <picture>
+                    <?if($arItem['MOB_SLIDER']):?>
+                        <source srcset="<?=$arItem['MOB_SLIDER']?>" media="(max-width: 576px)">
+                    <?endif;?>
+                    <img src="<?=$arItem['PK_SLIDER']?>"  class="image" />
+                </picture>
+
             </div>
         </div>
 	<?

@@ -2844,9 +2844,7 @@
     section.sthree{
         height: auto !important;
     }
-    .image-container.sl-2 img{
-        object-position: -588px 0 !important;
-    }
+
     /*Новый слайдер на главной*/
     #slider-home #slider-top .text {
         font-size: 30px;
@@ -3076,13 +3074,7 @@
     #two-mobile .slider-cover__btns.mobile {
         width: 150px !important;
     }
-    .image-container.sl-1 img{
-        object-position: -780px 0 !important;
-    }
 
-    .image-container.sl-4 img{
-        object-position: -550px 0 !important;
-    }
     /**/
     /*Оформление заказа*/
     #bx-soa-orderSave .pull-right{
@@ -3161,10 +3153,7 @@
         height: 222px;
     }
 
-    /**/
-    .image-container.sl-1 img{
-        object-position: -790px 0 !important;
-    }
+
 }
 @media (max-width:400px) {
     section.sthree div[data-slick-index="3"] .image-three {
@@ -3173,9 +3162,7 @@
     section.sthree div[data-slick-index="3"] .image-one {
         top: -28px !important;
     }
-    .image-container.sl-1 img{
-        object-position: -800px 0 !important;
-    }
+
     /*Видео*/
     .video-section{
         height: 214px;
@@ -3264,18 +3251,11 @@
 
 
 }
-@media (max-width:395px){
 
-    .image-container.sl-1 img{
-        object-position: -807px 0 !important;
-    }
-}
 
 @media (max-width:390px){
 
-    .image-container.sl-1 img{
-        object-position: -810px 0 !important;
-    }
+
     .line-footer{
         margin-bottom: 9px !important;
     }
@@ -3339,10 +3319,7 @@
     #project .slick-slide {
         height: 280px;
     }
-    /*Проекты*/
-    .image-container.sl-1 img{
-        object-position: -820px 0 !important;
-    }
+
     /*Видео*/
     .video-section{
         height: 203px;
@@ -3444,10 +3421,7 @@
     .video-section{
         height: 200px;
     }
-    /**/
-    .image-container.sl-1 img{
-        object-position: -825px 0 !important;
-    }
+
 }
 @media (max-width:370px) {
 
@@ -3528,13 +3502,7 @@
         padding: 0 15% 0 0;
     }
 
-    /**/
-    .image-container.sl-2 img{
-        object-position: -544px 0 !important;
-    }
-    .image-container.sl-1 img {
-        object-position: -760px 0 !important;
-    }
+
     /*Видео*/
     .video-section{
         height: 192px;
@@ -3623,12 +3591,6 @@
         margin-top: 40px;
     }
 }
-@media (max-width:350px) {
-    .image-container.sl-1 img {
-        object-position: -770px 0 !important;
-    }
-
-}
 
 @media (max-width:340px) {
     .bg-404 {
@@ -3644,9 +3606,7 @@
     }
     /**/
 
-    .image-container.sl-1 img {
-        object-position: -780px 0 !important;
-    }
+
     /*Видео*/
     .video-section{
         height: 180px;
@@ -3705,9 +3665,7 @@
 
 
 
-    .image-container.sl-1 img {
-        object-position: -784px 0 !important;
-    }
+
     /*Видео*/
     .video-section{
         height: 175px;
@@ -3728,9 +3686,6 @@
 }
 @media (max-width:320px) {
 
-    .image-container.sl-1 img {
-        object-position: -795px 0 !important;
-    }
     /*Видео*/
     .video-section{
         height: 169px;
