@@ -17,6 +17,7 @@ Thumbs.db
 .bash_history
 log.txt
 .cache
+/bitrix/.settings.php
 /bitrix/activities/
 /bitrix/admin/
 /bitrix/backup/
