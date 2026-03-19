@@ -28,13 +28,13 @@ $aMenuLinks = Array(
         Array(),
         ""
     ),
-    Array(
+    /*Array(
         "Привилегии",
         "/o-kompanii/privilegii/",
         Array(),
         Array(),
         ""
-    )
+    )*/
 );
 ?>
 

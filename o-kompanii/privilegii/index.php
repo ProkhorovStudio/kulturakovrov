@@ -3,7 +3,10 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("description", "Программа лояльности «Аэрофлот Бонус» от салона KulturaKovrov");
 $APPLICATION->SetPageProperty("title", "Программа лояльности «Аэрофлот Бонус»");
 $APPLICATION->SetTitle("Программа лояльности");
-?><div class="container privelegii-page">
+LocalRedirect('/o-kompanii/', false, "302 Moved Permanently");
+?>
+
+    <div class="container privelegii-page">
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="title-catalog"><?$APPLICATION->ShowTitle(false);?></h1>
