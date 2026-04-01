@@ -1,6 +1,6 @@
 ../.DS_Store|||null|||1758010476|||6154
 ../.access.php|||null|||1758010855|||47
-../.bash_history|||null|||1773844789|||1140
+../.bash_history|||null|||1773915459|||1276
 ../.cache/motd.legal-displayed|||null|||1771310026|||0
 ../.gitconfig|||null|||1771310613|||69
 ../.gitignore|||null|||1773828493|||1034
@@ -15,13 +15,13 @@
 ../404.php|||null|||1769077915|||1457
 .htaccess|||null|||1772027598|||16
 index.php|||null|||1772029454|||11945
-log.txt|||null|||1773900821|||0
+log.txt|||null|||1775024120|||0
 ../apib24/checkserver.php|||null|||1758010476|||62
 ../apib24/crest.php|||null|||1758010476|||15586
 ../apib24/handler.php|||null|||1758721852|||6496
 ../apib24/index.php|||null|||1758010476|||1399
 ../apib24/install.php|||null|||1758010552|||1497
-../apib24/settings.json|||null|||1773900782|||752
+../apib24/settings.json|||null|||1775023334|||752
 ../apib24/settings.php|||null|||1758010476|||646
 ../ats/index.php|||null|||1758010476|||126
 ../auth/.section.php|||null|||1758010476|||77
@@ -17852,6 +17852,12 @@ log.txt|||null|||1773900821|||0
 ../bitrix/gadgets/bitrix/weather/lang/ru/exec/index.php|||null|||1758010896|||2700
 ../bitrix/gadgets/bitrix/weather/styles.css|||null|||1758010896|||418
 ../bitrix/gadgets/bitrix/weather/styles.min.css|||null|||1758010896|||345
+../bitrix/gadgets/sprint.migration/dashboard/.description.php|||null|||1773925824|||496
+../bitrix/gadgets/sprint.migration/dashboard/.parameters.php|||null|||1773925824|||720
+../bitrix/gadgets/sprint.migration/dashboard/includes/errors.php|||null|||1773925824|||91
+../bitrix/gadgets/sprint.migration/dashboard/includes/interface.php|||null|||1773925824|||844
+../bitrix/gadgets/sprint.migration/dashboard/includes/style.php|||null|||1773925824|||293
+../bitrix/gadgets/sprint.migration/dashboard/index.php|||null|||1773925824|||2220
 ../bitrix/header.php|||null|||1758010908|||86
 ../bitrix/images/b24connector/macbook-gold.min.svg|||null|||1758010908|||42384
 ../bitrix/images/fileman/crosshair.cur|||null|||1758010910|||1494
@@ -30164,7 +30170,7 @@ log.txt|||null|||1773900821|||0
 ../bitrix/site_checker_0b88155388d9995f1276b49cf3c8f4f4.log|||null|||1763637167|||10631
 ../bitrix/site_checker_2ffe819c546e34726398e951b3cbbd03.log|||null|||1758010929|||9321
 ../bitrix/spread.php|||null|||1758010855|||76
-../bitrix/stack_cache/MYSQL/currency_currency_lang/06/06e86a31a9acbf1f2b244a314b769dc6.php|||null|||1773897492|||2202
+../bitrix/stack_cache/MYSQL/currency_currency_lang/06/06e86a31a9acbf1f2b244a314b769dc6.php|||null|||1775016643|||2202
 ../bitrix/templates/.default/ajax/ajax.css|||null|||1758010910|||448
 ../bitrix/templates/.default/ajax/ajax.min.css|||null|||1758010910|||420
 ../bitrix/templates/.default/components/bitrix/system.pagenavigation/blog/lang/en/template.php|||null|||1758010910|||143
@@ -31281,7 +31287,7 @@ log.txt|||null|||1773900821|||0
 ../include/index/one/desc-one.php|||null|||1758010552|||346
 ../include/index/one/desc-two.php|||null|||1758010552|||305
 ../include/index/one/title.php|||null|||1758010552|||67
-../index.php|||null|||1773401163|||22360
+../index.php|||null|||1773909984|||21776
 ../izbrannye-tovary/.section.php|||null|||1758010552|||86
 ../izbrannye-tovary/index.php|||null|||1758010552|||4520
 ../karta-sayta/.section.php|||null|||1758010855|||76
@@ -31678,7 +31684,7 @@ log.txt|||null|||1773900821|||0
 ../local/templates/main/assets/css/fonts/TTNormsPro-ThinItalic.woff|||null|||1758010476|||84412
 ../local/templates/main/assets/css/fonts/TTNormsPro-ThinItalic.woff2|||null|||1758010476|||52744
 ../local/templates/main/assets/css/fonts/fonts.css|||null|||1758010476|||8555
-../local/templates/main/assets/css/media.css|||null|||1773314063|||88482
+../local/templates/main/assets/css/media.css|||null|||1773909984|||87133
 ../local/templates/main/assets/css/owl.theme.default.css|||null|||1758010476|||1380
 ../local/templates/main/assets/css/slick-theme.css|||null|||1758010476|||3145
 ../local/templates/main/assets/css/slick.css|||null|||1758010476|||1776
@@ -32200,7 +32206,8 @@ log.txt|||null|||1773900821|||0
 ../local/templates/main/components/bitrix/news.list/slider-home-new/lang/en/template.php|||null|||1758010476|||125
 ../local/templates/main/components/bitrix/news.list/slider-home-new/lang/ru/.parameters.php|||null|||1758010476|||359
 ../local/templates/main/components/bitrix/news.list/slider-home-new/lang/ru/template.php|||null|||1758010476|||173
-../local/templates/main/components/bitrix/news.list/slider-home-new/template.php|||null|||1760523414|||2932
+../local/templates/main/components/bitrix/news.list/slider-home-new/result_modifier.php|||null|||1773909984|||392
+../local/templates/main/components/bitrix/news.list/slider-home-new/template.php|||null|||1773909984|||3163
 ../local/templates/main/components/bitrix/news.list/tags-list-catalog/template.php|||null|||1758010476|||1057
 ../local/templates/main/components/bitrix/news.list/type-float/template.php|||null|||1758010476|||1712
 ../local/templates/main/components/bitrix/sale.basket.basket/cart/.parameters.php|||null|||1758010476|||10712
@@ -32550,9 +32557,9 @@ log.txt|||null|||1773900821|||0
 ../local/templates/main/footer.php|||null|||1772724577|||27608
 ../local/templates/main/header.php|||null|||1772723575|||104837
 ../local/templates/main/lang/ru/description.php|||null|||1758010476|||160
-../log.txt|||null|||1773900640|||21102073
+../log.txt|||null|||1775023718|||44849817
 ../marketplace/configuration/index.php|||null|||1758010476|||657
-../o-kompanii/.left.menu.php|||null|||1758279084|||630
+../o-kompanii/.left.menu.php|||null|||1773909984|||634
 ../o-kompanii/.section.php|||null|||1758010552|||74
 ../o-kompanii/faq/.section.php|||null|||1758010552|||58
 ../o-kompanii/faq/index.php|||null|||1772720454|||2413
@@ -32561,8 +32568,8 @@ log.txt|||null|||1773900821|||0
 ../o-kompanii/kollaboracii/index.php|||null|||1764924290|||3284
 ../o-kompanii/pressa-o-nas/.section.php|||null|||1758010552|||115
 ../o-kompanii/pressa-o-nas/index.php|||null|||1764925829|||4368
-../o-kompanii/privilegii/.section.php|||null|||1758010552|||75
-../o-kompanii/privilegii/index.php|||null|||1764925858|||5762
+../o-kompanii/privilegii/.section.php|||null|||1773909984|||75
+../o-kompanii/privilegii/index.php|||null|||1773909984|||5831
 ../o-kompanii/uslugi/.section.php|||null|||1758010552|||67
 ../o-kompanii/uslugi/index.php|||null|||1764925889|||2647
 ../oferta/.section.php|||null|||1762510528|||133
@@ -32587,7 +32594,7 @@ log.txt|||null|||1773900821|||0
 ../robots.txt|||null|||1763707663|||2544
 ../search/.section.php|||null|||1758010929|||88
 ../search/index.php|||null|||1763543347|||1384
-../sitemap-files.xml|||null|||1766475260|||1891
+../sitemap-files.xml|||null|||1773908805|||1778
 ../sitemap-iblock-1.xml|||null|||1766475261|||17804
 ../sitemap-iblock-2.xml|||null|||1766475262|||200604
 ../sitemap.xml|||null|||1766475262|||473
