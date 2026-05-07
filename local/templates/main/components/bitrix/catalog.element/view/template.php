@@ -518,36 +518,67 @@ $imageModal = $pkPhotos[0];
                     <div class="button-block">
                         <div id="<?=$itemIds['BASKET_ACTIONS_ID']?>" style="display: <?=($actualItem['CAN_BUY'] ? '' : 'none')?>;">
                             <?
+                            // Получаем значение свойства "Не учитывать правила показа цены"
+                            $notRules = false;
+                            if (!empty($arResult["OFFERS"]) && !empty($arResult["OFFERS"][0]['PROPERTIES']['ATT_FULL_PRICE']['VALUE'])) {
+                                $notRules = ($arResult["OFFERS"][0]['PROPERTIES']['ATT_FULL_PRICE']['VALUE'] == 'да');
+                            }
+
+                            // Формируем массив ID офферов
+                            $allItemOffersIds = array();
                             foreach ($arResult["OFFERS"] as $arOffer) {
                                 $allItemOffersIds[] = $arOffer['ID'];
                             }
 
                             if($allItemOffersIds && $arResult['IS_CART']){
-                                $IsSkusInBasket = array_intersect($arResult['IS_CART'],$allItemOffersIds);
+                                $IsSkusInBasket = array_intersect($arResult['IS_CART'], $allItemOffersIds);
                             }
 
-                            ?>
-
-                            <?if($IsSkusInBasket):?>
+                            // Если свойство включено - показываем только кнопку "В примерку"
+                            if($notRules):
+                                ?>
+                                <?if($IsSkusInBasket):?>
                                 <a href="/personal/cart/" class="inCartCard">В примерке</a>
                             <?else:?>
-
-                                <?if($visiblePrice):?>
-                                    <a onclick="ym(100102212,'reachGoal','webit_add_to_fitting');" class="addCart" ids="<?=$arOffer['ID']?>" id="<?=$itemIds['ADD_BASKET_LINK']?>" href="javascript:void(0);">
-                                        <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4.79919 6.13679V5.36079C4.79919 3.56079 6.24719 1.79279 8.04719 1.62479C10.1912 1.41679 11.9992 3.10479 11.9992 5.20879V6.31279M5.99908 17.6008H10.7991C14.0151 17.6008 14.5911 16.3128 14.7591 14.7448L15.3591 9.94476C15.5751 7.99276 15.0151 6.40076 11.5991 6.40076H5.19908C1.78308 6.40076 1.22308 7.99276 1.43908 9.94476L2.03908 14.7448C2.20708 16.3128 2.78308 17.6008 5.99908 17.6008Z" stroke="#3F2429" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M11.1946 9.60156H11.2018M5.59375 9.60156H5.60094" stroke="#3F2429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Добавить в примерку
-                                    </a>
-                                    <a class="inCartCard" style="display: none" href="/personal/cart/">В примерке</a>
+                                <a onclick="ym(100102212,'reachGoal','webit_add_to_fitting');" class="addCart" id="<?=$itemIds['ADD_BASKET_LINK']?>" href="javascript:void(0);">
+                                    <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.79919 6.13679V5.36079C4.79919 3.56079 6.24719 1.79279 8.04719 1.62479C10.1912 1.41679 11.9992 3.10479 11.9992 5.20879V6.31279M5.99908 17.6008H10.7991C14.0151 17.6008 14.5911 16.3128 14.7591 14.7448L15.3591 9.94476C15.5751 7.99276 15.0151 6.40076 11.5991 6.40076H5.19908C1.78308 6.40076 1.22308 7.99276 1.43908 9.94476L2.03908 14.7448C2.20708 16.3128 2.78308 17.6008 5.99908 17.6008Z" stroke="#3F2429" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M11.1946 9.60156H11.2018M5.59375 9.60156H5.60094" stroke="#3F2429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Добавить в примерку
+                                </a>
+                                <a class="inCartCard" style="display: none" href="/personal/cart/">В примерке</a>
+                            <?endif;?>
+                            <?
+                            // Иначе стандартная логика с проверкой цены
+                            else:
+                                ?>
+                                <?if($IsSkusInBasket):?>
+                                <a href="/personal/cart/" class="inCartCard">В примерке</a>
+                            <?else:?>
+                                <?if($price['BASE_PRICE'] > 900000):?>
+                                    <span data-counter="form_praice" img="<?=$imageModal?>" artikle="<?=$artikles[0]?>" title="<?=$nameModal?>" class="inCardNotPrice" href="javascript:void(0)" rel="nofollow">Узнать цену</span>
                                 <?else:?>
-                                    <span data-counter="form_praice" img="<?=$imageModal?>" artikle="<?=$artikles[0]?>" title="<?=$nameModal?>" class="inCardNotPrice" data-call="getPrice">Узнать цену</span>
+                                    <?if($visiblePrice):?>
+                                        <a onclick="ym(100102212,'reachGoal','webit_add_to_fitting');" class="addCart" id="<?=$itemIds['ADD_BASKET_LINK']?>" href="javascript:void(0);">
+                                            <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.79919 6.13679V5.36079C4.79919 3.56079 6.24719 1.79279 8.04719 1.62479C10.1912 1.41679 11.9992 3.10479 11.9992 5.20879V6.31279M5.99908 17.6008H10.7991C14.0151 17.6008 14.5911 16.3128 14.7591 14.7448L15.3591 9.94476C15.5751 7.99276 15.0151 6.40076 11.5991 6.40076H5.19908C1.78308 6.40076 1.22308 7.99276 1.43908 9.94476L2.03908 14.7448C2.20708 16.3128 2.78308 17.6008 5.99908 17.6008Z" stroke="#3F2429" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M11.1946 9.60156H11.2018M5.59375 9.60156H5.60094" stroke="#3F2429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Добавить в примерку
+                                        </a>
+                                        <a class="inCartCard" style="display: none" href="/personal/cart/">В примерке</a>
+                                    <?else:?>
+                                        <span data-counter="form_praice" img="<?=$imageModal?>" artikle="<?=$artikles[0]?>" title="<?=$nameModal?>" class="inCardNotPrice" data-call="getPrice">Узнать цену</span>
+                                    <?endif;?>
                                 <?endif;?>
                             <?endif;?>
+                            <?
+                            endif;
+                            ?>
                         </div>
                         <div id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" style="display: <?=(!$actualItem['CAN_BUY'] ? '' : 'none')?>;">
-                            <span data-counter="form_praice" img="<?=$imageModal?>" artikle="<?=$artikles[0]?>" title="<?=$nameModal?>"  class="inCardNotPrice" href="javascript:void(0)" rel="nofollow">Узнать цену</span>
+                            <span data-counter="form_praice" img="<?=$imageModal?>" artikle="<?=$artikles[0]?>" title="<?=$nameModal?>" class="inCardNotPrice" href="javascript:void(0)" rel="nofollow">Узнать цену</span>
                         </div>
                     </div>
                     <div class="primerka-description">

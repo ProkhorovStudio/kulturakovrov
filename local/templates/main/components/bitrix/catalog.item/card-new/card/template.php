@@ -266,48 +266,80 @@ if($offerArr && $arResult['IS_CART']){
 
 				case 'buttons':?>
 
-					<div class="product-item-info-container product-item-hidden" data-entity="buttons-block">
+                    <div class="product-item-info-container product-item-hidden" data-entity="buttons-block">
+                        <?
+                        // Получаем значение свойства "Не учитывать правила показа цены"
+                        $notRules = false;
 
-							<?
-                            if ($arParams['PRODUCT_DISPLAY_MODE'] === 'Y' && $price['UNROUND_BASE_PRICE'] > 0 && $price['UNROUND_BASE_PRICE'] < 900000)
-							{
+                        // Проверяем наличие офферов и свойства
+                        if (!empty($item['OFFERS']) && !empty($item['OFFERS'][0]['PROPERTIES']['ATT_FULL_PRICE']['VALUE'])) {
+                            $notRules = ($item['OFFERS'][0]['PROPERTIES']['ATT_FULL_PRICE']['VALUE'] == 'да');
+                        }
 
-								?>
-								<div class="product-item-button-container">
+                        // Если свойство включено (true) - показываем только кнопку "В примерку"
+                        if ($notRules):
+                            ?>
+                            <div class="product-item-button-container">
+                                <?if($IsSkusInBasket):?>
+                                    <a href="/personal/cart/" class="inCart" style="display: block">В примерке</a>
+                                <?else:?>
+                                    <div id="<?=$itemIds['BASKET_ACTIONS']?>">
+                                        <button onclick="ym(100102212,'reachGoal','webit_add_to_fitting');return true;"
+                                                class="buybtn btn btn-primary <?=$buttonSizeClass?>"
+                                                id="<?=$itemIds['BUY_LINK']?>"
+                                                href="javascript:void(0)" rel="nofollow">
+                                            В примерку
+                                        </button>
+                                        <a class="inCart" href="/personal/cart/">В примерке</a>
+                                    </div>
+                                <?endif;?>
+                            </div>
+                        <?
+                        // Иначе стандартная логика с проверкой цены
+                        elseif ($arParams['PRODUCT_DISPLAY_MODE'] === 'Y' && $price['UNROUND_BASE_PRICE'] > 0 && $price['UNROUND_BASE_PRICE'] < 900000):
+                            ?>
+                            <div class="product-item-button-container">
+                                <button data-counter="form_praice"
+                                        artikle="<?=$actualItem['PROPERTIES']['ARTICLE']['VALUE']?>"
+                                        img="<?=$actualItem['MORE_PHOTO'][0]['SRC']?>"
+                                        title="<?=$actualItem['NAME']?>"
+                                        class="btn btn-link <?=$buttonSizeClass?> getPriceModal"
+                                        id="<?=$itemIds['NOT_AVAILABLE_MESS']?>"
+                                        rel="nofollow"
+                                    <?=($actualItem['CAN_BUY'] ? 'style="display: none;"' : '')?>>
+                                    Узнать цену
+                                </button>
 
-									<button data-counter="form_praice" artikle="<?=$actualItem['PROPERTIES']['ARTICLE']['VALUE']?>" img="<?=$actualItem['MORE_PHOTO'][0]['SRC']?>" title="<?=$actualItem['NAME']?>" class="btn btn-link <?=$buttonSizeClass?> getPriceModal"
-											id="<?=$itemIds['NOT_AVAILABLE_MESS']?>"  rel="nofollow"
-										<?=($actualItem['CAN_BUY'] ? 'style="display: none;"' : '')?>>
-                                        Узнать цену
-									</button>
-                                    <?if($IsSkusInBasket):?>
-                                        <a href="/personal/cart/" class="inCart" style="display: block">В примерке</a>
-                                    <?else:?>
-                                        <div id="<?=$itemIds['BASKET_ACTIONS']?>" <?=($actualItem['CAN_BUY'] ? '' : 'style="display: none;"')?>>
-                                            <button onclick="ym(100102212,'reachGoal','webit_add_to_fitting');return true;" class="buybtn btn btn-primary <?=$buttonSizeClass?>" id="<?=$itemIds['BUY_LINK']?>"
-                                                    href="javascript:void(0)" rel="nofollow">
-                                                В примерку
-                                            </button>
-                                            <a class="inCart" href="/personal/cart/">В примерке</a>
-                                        </div>
-                                    <?endif;?>
-
-								</div>
-								<?
-							}
-							else
-							{
-								?>
-								<div class="product-item-button-container">
-									<div data-counter="form_praice" artikle="<?=$actualItem['PROPERTIES']['ARTICLE']['VALUE']?>" img="<?=$actualItem['MORE_PHOTO'][0]['SRC']?>" title="<?=$actualItem['NAME']?>"  class="btn btn-primary buybtn getPriceModal" >
-										Узнать цену
-									</div>
-								</div>
-								<?
-							}
-
-						?>
-					</div>
+                                <?if($IsSkusInBasket):?>
+                                    <a href="/personal/cart/" class="inCart" style="display: block">В примерке</a>
+                                <?else:?>
+                                    <div id="<?=$itemIds['BASKET_ACTIONS']?>" <?=($actualItem['CAN_BUY'] ? '' : 'style="display: none;"')?>>
+                                        <button onclick="ym(100102212,'reachGoal','webit_add_to_fitting');return true;"
+                                                class="buybtn btn btn-primary <?=$buttonSizeClass?>"
+                                                id="<?=$itemIds['BUY_LINK']?>"
+                                                href="javascript:void(0)" rel="nofollow">
+                                            В примерку
+                                        </button>
+                                        <a class="inCart" href="/personal/cart/">В примерке</a>
+                                    </div>
+                                <?endif;?>
+                            </div>
+                        <?
+                        else:
+                            ?>
+                            <div class="product-item-button-container">
+                                <div data-counter="form_praice"
+                                     artikle="<?=$actualItem['PROPERTIES']['ARTICLE']['VALUE']?>"
+                                     img="<?=$actualItem['MORE_PHOTO'][0]['SRC']?>"
+                                     title="<?=$actualItem['NAME']?>"
+                                     class="btn btn-primary buybtn getPriceModal">
+                                    Узнать цену
+                                </div>
+                            </div>
+                        <?
+                        endif;
+                        ?>
+                    </div>
 					<?
 					break;
 

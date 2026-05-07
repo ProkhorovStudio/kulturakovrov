@@ -4381,3 +4381,13 @@ footer .line-footer-soc a{
 	font-size: 16px;
 	color: #000000;
 }
+.card-product .text-collection {
+	font-size: 25px;
+	font-weight: 500;
+	margin-top: 25px;
+	line-height: 1.4;
+}
+.card-product .text-collection a {
+	text-decoration: none;
+	color: #000000;
+}

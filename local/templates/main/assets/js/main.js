@@ -524,6 +524,7 @@ $(document).on('click', '.footer-view-map span', function() {
 });
 
 $(document).on('click', '.modal .close', function() {
+
     $('.modal,.wrp-modal').removeClass('show');
     $('.modal form').trigger('reset');
     $('.modal input[name="data-counter"]').val('');
