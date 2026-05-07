@@ -2720,28 +2720,57 @@
 				if (this.obPrice.price)
 				{
 
-					if (price && price.RATIO_PRICE > 0)
-					{
-						if(price.RATIO_PRICE > 900000){
-							var newPrice = Math.round(price.RATIO_PRICE/sqwBlock.value);
-							if(newPrice){
-								BX.adjust(this.obPrice.price, {html: 'от ' +  BX.Currency.currencyFormat(newPrice, price.CURRENCY, true)});
+					var priceNotRules = this.offers[0]['VIEW_PRICE'];
+
+					if(priceNotRules){
+						if (price && price.RATIO_PRICE > 0)
+						{
+
+							BX.adjust(this.obPrice.price, {html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)});
+
+							this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {
+								html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)
+							});
+						}
+						else
+						{
+							BX.adjust(this.obPrice.price, {html: ''});
+							this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {html: ''});
+						}
+					}
+					else{
+						if (price && price.RATIO_PRICE > 0)
+						{
+							if(price.RATIO_PRICE > 900000){
+
+								function customRound(number) {
+									if (number > 100000) {
+										return Math.round(number / 1000) * 1000;
+									} else {
+										return Math.floor(number / 10000) * 10000;
+									}
+								}
+
+								var newPrice = customRound(price.RATIO_PRICE/sqwBlock.value);
+								if(newPrice){
+									BX.adjust(this.obPrice.price, {html: 'от ' +  BX.Currency.currencyFormat(newPrice, price.CURRENCY, true)});
+								}
+
+							}
+							else{
+								BX.adjust(this.obPrice.price, {html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)});
 							}
 
-						}
-						else{
-							BX.adjust(this.obPrice.price, {html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)});
-						}
 
-
-						this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {
-							html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)
-						});
-					}
-					else
-					{
-						BX.adjust(this.obPrice.price, {html: ''});
-						this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {html: ''});
+							this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {
+								html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)
+							});
+						}
+						else
+						{
+							BX.adjust(this.obPrice.price, {html: ''});
+							this.smallCardNodes.price && BX.adjust(this.smallCardNodes.price, {html: ''});
+						}
 					}
 
 					if (price && price.RATIO_PRICE !== price.RATIO_BASE_PRICE)

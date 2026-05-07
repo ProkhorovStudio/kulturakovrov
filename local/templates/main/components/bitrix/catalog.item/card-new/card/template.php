@@ -38,7 +38,6 @@ if($offerArr && $arResult['IS_CART']){
 ?>
 
 <div class="product-item">
-
 	<?
 	/*echo "<pre>";
 	print_r($item['PROPERTIES']);
@@ -56,7 +55,20 @@ if($offerArr && $arResult['IS_CART']){
 	    }
 
 	?>
-
+        <style>
+            .product-item-image-wrapper.bg-product-cart{
+                height: 455px;
+                padding: 11px;
+                /*border: 1px solid #E6E6E6;*/
+                box-sizing: border-box;
+            }
+            .product-item-image-wrapper.bg-product-cart .product-item-image-slider-slide-container{
+                position: relative;
+            }
+            .product-item-image-wrapper.bg-product-cart .product-item-image-slide {
+                background-size: contain !important;
+            }
+        </style>
 	<div onclick="ym(100102212,'reachGoal','webit_add_to_favorite');return true;" class="wish-list <?=$class?>" data-id="<?=$item['ID']?>">
 		<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M9.465 16.3575C9.21 16.4475 8.79 16.4475 8.535 16.3575C6.36 15.615 1.5 12.5175 1.5 7.26751C1.5 4.95001 3.3675 3.07501 5.67 3.07501C7.035 3.07501 8.2425 3.73501 9 4.75501C9.7575 3.73501 10.9725 3.07501 12.33 3.07501C14.6325 3.07501 16.5 4.95001 16.5 7.26751C16.5 12.5175 11.64 15.615 9.465 16.3575Z" stroke="#504646" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -77,8 +89,9 @@ if($offerArr && $arResult['IS_CART']){
 				foreach ($morePhoto as $key => $photo)
 				{
 					?>
-					<span class="product-item-image-slide item <?=($key == 0 ? 'active' : '')?>" style="background-image: url('<?=$photo['src']?>');"></span>
+					<span class=" product-item-image-slide item <?=($key == 0 ? 'active' : '')?>" style="background-image: url('<?=$photo['src']?>');"></span>
 					<?
+
 				}
 			}
 			?>
@@ -189,26 +202,59 @@ if($offerArr && $arResult['IS_CART']){
 						}
 						?>
 
-						<span class="product-item-price-current" id="<?=$itemIds['PRICE']?>">
-							<?if (!empty($price) && $price['UNROUND_BASE_PRICE'] > 0 && $price['UNROUND_BASE_PRICE'] < 900000)
-							{
 
-								if ($arParams['PRODUCT_DISPLAY_MODE'] === 'N' && $haveOffers)
-								{
-									echo Loc::getMessage(
-										'CT_BCI_TPL_MESS_PRICE_SIMPLE_MODE',
-										array(
-											'#PRICE#' => $price['PRINT_RATIO_PRICE'],
-											'#VALUE#' => $measureRatio,
-											'#UNIT#' => $minOffer['ITEM_MEASURE']['TITLE']
-										)
-									);
-								}
-								else
-								{
-									echo $price['PRINT_RATIO_PRICE'];
-								}
-							}
+
+
+						<span class="product-item-price-current" id="<?=$itemIds['PRICE']?>">
+
+
+
+
+							<?
+
+                            if($item['OFFERS'][0]['PROPERTIES']['ATT_FULL_PRICE']['VALUE'] == 'да'){
+                                if (!empty($price) && $price['UNROUND_BASE_PRICE'] > 0)
+                                {
+
+                                    if ($arParams['PRODUCT_DISPLAY_MODE'] === 'N' && $haveOffers)
+                                    {
+                                        echo Loc::getMessage(
+                                            'CT_BCI_TPL_MESS_PRICE_SIMPLE_MODE',
+                                            array(
+                                                '#PRICE#' => $price['PRINT_RATIO_PRICE'],
+                                                '#VALUE#' => $measureRatio,
+                                                '#UNIT#' => $minOffer['ITEM_MEASURE']['TITLE']
+                                            )
+                                        );
+                                    }
+                                    else
+                                    {
+                                        echo $price['PRINT_RATIO_PRICE'];
+                                    }
+                                }
+                            }
+                            else{
+                                if (!empty($price) && $price['UNROUND_BASE_PRICE'] > 0 && $price['UNROUND_BASE_PRICE'] < 900000)
+                                {
+
+                                    if ($arParams['PRODUCT_DISPLAY_MODE'] === 'N' && $haveOffers)
+                                    {
+                                        echo Loc::getMessage(
+                                            'CT_BCI_TPL_MESS_PRICE_SIMPLE_MODE',
+                                            array(
+                                                '#PRICE#' => $price['PRINT_RATIO_PRICE'],
+                                                '#VALUE#' => $measureRatio,
+                                                '#UNIT#' => $minOffer['ITEM_MEASURE']['TITLE']
+                                            )
+                                        );
+                                    }
+                                    else
+                                    {
+                                        echo $price['PRINT_RATIO_PRICE'];
+                                    }
+                                }
+                            }
+
 							?>
 						</span>
 

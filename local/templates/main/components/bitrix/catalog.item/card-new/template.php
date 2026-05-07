@@ -156,7 +156,8 @@ if (isset($arResult['ITEM']))
 					'ITEM_MEASURE_RATIOS' => $item['ITEM_MEASURE_RATIOS'],
 					'ITEM_MEASURE_RATIO_SELECTED' => $item['ITEM_MEASURE_RATIO_SELECTED'],
 					'MORE_PHOTO' => $item['MORE_PHOTO'],
-					'MORE_PHOTO_COUNT' => $item['MORE_PHOTO']
+					'MORE_PHOTO_COUNT' => $item['MORE_PHOTO'],
+
 				),
 				'BASKET' => array(
 					'ADD_PROPS' => $arParams['ADD_PROPERTIES_TO_BASKET'] === 'Y',
@@ -307,7 +308,7 @@ if (isset($arResult['ITEM']))
         foreach ($jsParams['OFFERS'] as $key => &$offerItem) {
             if (!empty($offerItem['MORE_PHOTO'])) {
                 $newFiles = [];
-                foreach ($offerItem['MORE_PHOTO'] as $photo) {
+                foreach ($offerItem['MORE_PHOTO'] as $key=> $photo) {
                     $newFiles[] = CFile::ResizeImageGet(
                         $photo['ID'],
                         ['width' => 500, 'height' => 500],
@@ -317,9 +318,31 @@ if (isset($arResult['ITEM']))
                         true,
                         90
                     );
+                    
                 }
                 $offerItem['MORE_PHOTO'] = $newFiles;
             }
+
+
+            // Получаем значение свойства ATT_FULL_PRICE для текущего ТП
+            if (isset($offerItem['ID']) && $offerItem['ID'] > 0) {
+
+                $propertyValue = '';
+
+                $dbProperty = CIBlockElement::GetProperty(
+                    2,
+                    $offerItem['ID'],
+                    [],
+                    ['CODE' => 'ATT_FULL_PRICE']
+                );
+
+                if ($arProperty = $dbProperty->Fetch()) {
+                    $propertyValue = $arProperty['VALUE'];
+                }
+
+                $offerItem['VIEW_PRICE'] = $propertyValue;
+            }
+
         }
         unset($offerItem);
 

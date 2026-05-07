@@ -22,7 +22,7 @@ $dbBasketItems = CSaleBasket::GetList(
     }
 
     if($allBasketItems){
-    $arResult['IS_CART'] = $allBasketItems;
+        $arResult['IS_CART'] = $allBasketItems;
     }
 
 unset($allBasketItems);

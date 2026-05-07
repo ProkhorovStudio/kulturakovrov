@@ -214,12 +214,19 @@ foreach ($arResult["OFFERS"]  as  $arOffer){
     $ploshad[] = $arOffer['PROPERTIES']['Ploshchad']['VALUE'];
     $width = $arOffer['PROPERTIES']['ATT_WIDTH']['VALUE'];
     $height = $arOffer['PROPERTIES']['ATT_HEIGHT']['VALUE'];
+    $fullPriceValues[$arOffer['ID']] = $arOffer['PROPERTIES']['ATT_FULL_PRICE']['VALUE'];
+    $priceNotRules = $arOffer['PROPERTIES']['ATT_FULL_PRICE']['VALUE'];
 }
 if($width && $height){
     $sqw = $width*$height/10000;
 }
 
+foreach ($arResult['JS_OFFERS'] as $key => &$offerItem) {
+    $offerId = $offerItem['ID'] ?? 0;
+    $offerItem['VIEW_PRICE'] = $fullPriceValues[$offerId] ?? null;
+}
 
+unset($offerItem);
 
 //echo "<pre>";
 //print_r($colors[0]['VALUE']);
@@ -256,12 +263,17 @@ $imageModal = $pkPhotos[0];
         <div class="col-md-6 col-sm-12">
             <div class="left-view-block">
                 <diV class="slider-view">
-                    <?foreach ($pkPhotos as $image):?>
+                    <?
+                    $i = 1;
+                    foreach ($pkPhotos as $image):?>
+
                         <a data-fancybox="pk-gallery" href="<?=$image?>">
-                            <img src="<?=$image?>" alt="<?=$name?>">
+                            <img class="<?if($i == 1){echo 'first';}?>" src="<?=$image?>" alt="<?=$name?>">
                         </a>
 
-                    <?endforeach?>
+                    <?
+                        $i++;
+                    endforeach?>
                 </diV>
 
                 <div class="dots-other-images">
@@ -285,17 +297,25 @@ $imageModal = $pkPhotos[0];
                     <div class="product-title">
                         <h1 class="bx-title"><?if($artikles[0] != 1341 ):?>Ковер <?endif;?><?=$name?></h1>
                     </div>
-                    
+
                     <div class="product-after-name new-block">
                         <div class="product-after-name__left-block">
-                            <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
+                            <?if($method == 'Ручная работа'):?>
+                                <p class="material_type">Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
+                            <?else:?>
+                                <p class="material_type"><span class="material"><?=$material[0]?></span>.</p>
+                            <?endif;?>
 
                             <?if($colorsName):?>
                                 <p class="colors">
                                     <?=implode(',&nbsp ', $colorsName); ?>
                                 </p>
                             <?endif;?>
+                            <?if($arResult['DETAIL_TEXT'] != ''):?>
+                                <div class="button-more-desc">Полное описание</div>
+                            <?endif;?>
                         </div>
+
                         <div class="product-after-name__right-block">
 
                             <?if($arResult['PROPERTIES']['ATT_MODEL']['VALUE']):
@@ -305,7 +325,19 @@ $imageModal = $pkPhotos[0];
                             <?endif?>
                             <?endif;?>
                         </div>
+
                     </div>
+                    <div class="text-bottom">
+                        <?if($arResult['PROPERTIES']['ATT_VIEW_TEXT']['VALUE'] == 'да'):?>
+                            <div class="text-collection">
+                                <?if($arResult['PROPERTIES']['ATT_LINK']):?>
+                                    <a target="_blank" href="<?=$arResult['PROPERTIES']['ATT_LINK']['VALUE']?>"><?=$arResult['PROPERTIES']['ATT_TEXT']['~VALUE']['TEXT'];?></a>
+                                <?endif?>
+                            </div>
+                        <?endif;?>
+                    </div>
+
+
 
                     <div class="properties-top">
 
@@ -444,15 +476,17 @@ $imageModal = $pkPhotos[0];
                         $visiblePrice = false;
                     };
 
-                    if($price['BASE_PRICE'] > 900000 && isset($sqw)){
-                        $newPrice = $price['BASE_PRICE'] / $sqw;
-                        $roundPr = customRound($newPrice );
 
 
-                        $priceNew = number_format($roundPr,0,'', ' ');
+                    if(!$priceNotRules){
+                        if($price['BASE_PRICE'] > 900000 && isset($sqw)){
+                            $newPrice = $price['BASE_PRICE'] / $sqw;
+                            $roundPr = customRound($newPrice );
 
+                            $priceNew = number_format($roundPr,0,'', ' ');
 
-                        $price['PRINT_RATIO_PRICE'] = 'от '.$priceNew;
+                            $price['PRINT_RATIO_PRICE'] = 'от '.$priceNew;
+                        }
                     }
 
 

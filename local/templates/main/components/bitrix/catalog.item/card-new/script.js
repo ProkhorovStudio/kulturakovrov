@@ -1841,9 +1841,21 @@
 					{
 						if (this.offers[index].MORE_PHOTO.hasOwnProperty(i))
 						{
+
+							var type = 'vertical';
+
+							var size = this.offers[index].MORE_PHOTO[i].width - this.offers[index].MORE_PHOTO[i].height;
+
+							if(size > 10){
+								type = 'horizontal';
+							}
+
 							this.obPictSlider.appendChild(
 								BX.create('SPAN', {
-									props: {className: 'product-item-image-slide item' + (i == 0 ? ' active' : '')},
+									props: {
+										className: 'product-item-image-slide item' + (i == 0 ? ' active' : '') +
+											(type == 'horizontal' ? ' horizontal' : ' vertical')
+									},
 									style: {backgroundImage: 'url(\'' + this.offers[index].MORE_PHOTO[i].src + '\')'}
 								})
 							);
@@ -2078,17 +2090,33 @@
 
 			if (this.obPrice)
 			{
+				var priceNotRules = this.offers[0] ? this.offers[0]['VIEW_PRICE'] : null;
+				var currentPrice = price && price.RATIO_PRICE > 0 ? price.RATIO_PRICE : null;
 
+				if (currentPrice) {
+					// Определяем, нужно ли показывать цену
+					var shouldShowPrice = false;
 
-				if (price && price.RATIO_PRICE > 0 && price.RATIO_PRICE < 900000)
-				{
+					if (priceNotRules) {
+						// Если есть особое правило - показываем любую цену
+						shouldShowPrice = true;
+					} else {
+						// Если нет особого правила - показываем только цены меньше 900 000
+						shouldShowPrice = currentPrice < 900000;
+					}
 
-					BX.adjust(this.obPrice, {html: BX.Currency.currencyFormat(price.RATIO_PRICE, price.CURRENCY, true)});
-				}
-				else
-				{
+					if (shouldShowPrice) {
+						BX.adjust(this.obPrice, {
+							html: BX.Currency.currencyFormat(currentPrice, price.CURRENCY, true)
+						});
+					} else {
+						BX.adjust(this.obPrice, {html: ''});
+					}
+				} else {
 					BX.adjust(this.obPrice, {html: ''});
 				}
+
+
 
 				if (this.showOldPrice && this.obPriceOld)
 				{

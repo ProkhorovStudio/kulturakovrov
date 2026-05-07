@@ -194,6 +194,7 @@ if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y' && !empty($arParams['DISCOUNT_PER
 }
 
 $labelPositionClass = 'product-item-label-big';
+
 if (!empty($arParams['LABEL_PROP_POSITION']))
 {
     foreach (explode('-', $arParams['LABEL_PROP_POSITION']) as $pos)
@@ -210,11 +211,22 @@ foreach ($arResult["OFFERS"]  as  $arOffer){
     $method = $arOffer['PROPERTIES']['Method']['VALUE'];
     $width = $arOffer['PROPERTIES']['ATT_WIDTH']['VALUE'];
     $height = $arOffer['PROPERTIES']['ATT_HEIGHT']['VALUE'];
+    $fullPriceValues[$arOffer['ID']] = $arOffer['PROPERTIES']['ATT_FULL_PRICE']['VALUE'];
+    $priceNotRules = $arOffer['PROPERTIES']['ATT_FULL_PRICE']['VALUE'];
 }
 
 if($width && $height){
     $sqw = $width*$height/10000;
 }
+
+foreach ($arResult['JS_OFFERS'] as $key => &$offerItem) {
+    $offerId = $offerItem['ID'] ?? 0;
+    $offerItem['VIEW_PRICE'] = $fullPriceValues[$offerId] ?? null;
+}
+
+unset($offerItem);
+
+
 
 if(Loader::IncludeModule('ldo.develop')){
 
@@ -266,9 +278,6 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                     <div class="product-title">
                         <h1 class="bx-title"><?if($artikles[0] != 1341 ):?>Ковер <?endif;?><?=$name?></h1>
                     </div>
-
-
-
                     <div class="product-after-name">
                         <?if($method == 'Ручная работа'):?>
                             <p>Ручная работа, <span class="material"><?=$material[0]?></span>.</p>
@@ -282,6 +291,15 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                             </p>
                         <?endif;?>
                     </div>
+                    <?if($arResult['PROPERTIES']['ATT_VIEW_TEXT']['VALUE'] == 'да'):?>
+                        <div class="text-collection">
+                            <?if($arResult['PROPERTIES']['ATT_LINK']):?>
+                                <a target="_blank" href="<?=$arResult['PROPERTIES']['ATT_LINK']['VALUE']?>"><?=$arResult['PROPERTIES']['ATT_TEXT']['~VALUE']['TEXT'];?></a>
+                            <?endif?>
+                        </div>
+                    <?endif;?>
+
+
                     <?if($arResult['DETAIL_TEXT'] != ''):?>
                         <div class="button-more-desc">Полное описание</div>
                     <?endif;?>
@@ -376,6 +394,14 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
                             </div>
                             
                         </div>
+
+                        <?if($arResult['PROPERTIES']['ATT_VIEW_TEXT']['VALUE'] == 'да'):?>
+                            <div class="text-collection">
+                                <?if($arResult['PROPERTIES']['ATT_LINK']):?>
+                                    <a target="_blank" href="<?=$arResult['PROPERTIES']['ATT_LINK']['VALUE']?>"><?=$arResult['PROPERTIES']['ATT_TEXT']['~VALUE']['TEXT'];?></a>
+                                <?endif?>
+                            </div>
+                        <?endif;?>
 
 
                     </div>
@@ -522,14 +548,19 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
 
 
 
-                if($price['BASE_PRICE'] > 900000 && isset($sqw)){
-                    $newPrice = $price['BASE_PRICE'] / $sqw;
-                    $roundPr = customRound($newPrice );
+                if(!$priceNotRules){
+                    if($price['BASE_PRICE'] > 900000 && isset($sqw)){
+                        $newPrice = $price['BASE_PRICE'] / $sqw;
+                        $roundPr = customRound($newPrice );
 
-                    $priceNew = number_format($roundPr,0,'', ' ');
+                        $priceNew = number_format($roundPr,0,'', ' ');
 
-                    $price['PRINT_RATIO_PRICE'] = 'от '.$priceNew;
+                        $price['PRINT_RATIO_PRICE'] = 'от '.$priceNew;
+                    }
                 }
+
+
+
 
                 ?>
                 <div class="price-block">
@@ -832,6 +863,16 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
         </div>
     </div>
 </div>
+<?php
+
+if($USER->IsAdmin()):?>
+
+
+<?php
+endif;
+?>
+
+
 
 <div class="row">
     <div class="col-lg-12">
