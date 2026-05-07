@@ -251,12 +251,6 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
 
 ?>
 
-<?if($USER->IsAdmin()):?>
-
-
-<?endif;?>
-
-
 <div class="bx-catalog-element bx-<?=$arParams['TEMPLATE_THEME']?>" id="<?=$itemIds['ID']?>"
      itemscope itemtype="http://schema.org/Product">
     <div class="row">
@@ -838,16 +832,6 @@ foreach ($actualItem['MORE_PHOTO'] as $photo){
         </div>
     </div>
 </div>
-<?php
-
-if($USER->IsAdmin()):?>
-
-
-<?php
-endif;
-?>
-
-
 
 <div class="row">
     <div class="col-lg-12">

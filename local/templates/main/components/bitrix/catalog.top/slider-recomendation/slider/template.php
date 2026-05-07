@@ -130,12 +130,13 @@ $containerName = 'catalog-top-container';
 			?>
 			<div class="row <?=$rowData['CLASS']?> catalog-top-slide <?=$activeClass?>" id="<?=$rowId?>" data-entity="items-row">
 				<?php
+                $template = 'card-new';
 				    foreach ($rowItems as $item) {?>
 							<div class="col-sm-3 col-lg-3 product-item-big-card">
 								<?php
 								$APPLICATION->IncludeComponent(
 									'bitrix:catalog.item',
-									'card',
+                                    $template,
 									[
 										'RESULT' => [
 											'ITEM' => $item,

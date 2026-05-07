@@ -137,6 +137,9 @@ $containerName = 'catalog-top-container';
 						<div class="col-xs-12 product-item-small-card">
 							<div class="row">
 								<?
+
+                                $template = 'card-new';
+
 								foreach ($rowItems as $item)
 								{
 									?>
@@ -146,7 +149,7 @@ $containerName = 'catalog-top-container';
 												<?
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
-													'card',
+                                                    $template,
 													array(
 														'RESULT' => array(
 															'ITEM' => $item,

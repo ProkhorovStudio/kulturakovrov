@@ -144,9 +144,13 @@ $containerName = 'catalog-top-container';
 										<div class="row">
 											<div class="col-md-12">
 												<?
+
+                                                $template = 'card-new';
+
+
 												$APPLICATION->IncludeComponent(
 													'bitrix:catalog.item',
-													'card',
+                                                    $template,
 													array(
 														'RESULT' => array(
 															'ITEM' => $item,
