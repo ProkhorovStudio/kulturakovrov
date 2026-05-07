@@ -2101,6 +2101,15 @@
     }
 }
 @media (max-width:576px) {
+
+    .image-container.sl-2 img {
+        object-position: inherit;
+    }
+    .image-container.sl-1 img{
+        object-position: inherit;
+    }
+
+
     footer .line-footer-soc  .inst-footer{
         background: url('../icons/inst-footer-mobile.svg') no-repeat;
 
