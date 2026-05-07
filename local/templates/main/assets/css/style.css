@@ -656,7 +656,12 @@ div.title-search-result {
 	white-space: nowrap;
 }
 .product-item_scu-block{
-	padding: 6px 7px;
+	padding: 0px;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom: 1px solid #000000;
+	margin-right: 6px;
 }
 /*Постраничная навигация*/
 
