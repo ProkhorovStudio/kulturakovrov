@@ -4327,3 +4327,37 @@ footer .line-footer-soc a{
 	left: -26px;
 	top: 2px;
 }
+/*Кнопка наверх*/
+.toTopBtn{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #3F2429;
+	border: 1px solid #3F2429;
+	position: fixed;
+	bottom: 150px;
+	right: 52px;
+	transition: all .3s;
+	cursor: pointer;
+	text-align: center;
+	display: none;
+	z-index: 5;
+}
+.toTopBtn.active{
+	display: block;
+}
+.toTopBtn:hover{
+	background: #886C71;
+	border-color:#886C71;
+}
+.toTopBtn svg{
+	margin-top: 21px;
+}
+.toTopBtn svg path{
+	stroke: #ffffff;
+	transition: all .3s;
+}
+
+.toTopBtn:hover svg path{
+	stroke: #FFFFFF;
+}

@@ -79,7 +79,7 @@ if(in_array($_REQUEST['event'], ['0' => 'ONVOXIMPLANTCALLEND'])){
                         ]
                     );
 
-                    addMessage2Log($result);
+
 
 
                     /*Проверяем отсутствие активных лидов*/

@@ -21,11 +21,6 @@ $(document).on('click', '.smart-filter_title-razmer', function(e) {
    $(this).toggleClass('open');
 });
 
-
-
-
-/*Фиксация шапки*/
-
 document.addEventListener('scroll', function () {
 
         if ($(window).scrollTop() > 120) {
@@ -36,9 +31,23 @@ document.addEventListener('scroll', function () {
             $('body').removeClass('fixed');
         }
 
+        if($('body').width() > 768){
+            if($(window).scrollTop() > 400){
+                $('.toTopBtn').addClass('active');
+            } else{
+                $('.toTopBtn').removeClass('active');
+            }
+        }
 
 })
-/**/
+
+$(document).on('click', '.toTopBtn', function(e) {
+    $('body, html').animate({
+        scrollTop: 0
+    }, 800);
+    return false;
+})
+
 
 $(document).on('click', '.wish-list', function(e) {
     e.preventDefault();
