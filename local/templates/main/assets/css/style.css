@@ -4361,3 +4361,15 @@ footer .line-footer-soc a{
 .toTopBtn:hover svg path{
 	stroke: #FFFFFF;
 }
+.product-item-image-wrapper.bg-product-cart{
+	height: 455px;
+	padding: 11px;
+	/*border: 1px solid #E6E6E6;*/
+	box-sizing: border-box;
+}
+.product-item-image-wrapper.bg-product-cart .product-item-image-slider-slide-container{
+	position: relative;
+}
+.product-item-image-wrapper.bg-product-cart .product-item-image-slide {
+	background-size: contain !important;
+}

@@ -227,13 +227,7 @@ if($USER->isAdmin()){
 		{
 			$rowItems = array_splice($arResult['ITEMS'], 0, $rowData['COUNT']);
 
-			$template = 'card';
-
-
-			if($USER->isAdmin()){
-                $template = 'card-new';
-
-            }
+			$template = 'card-new';
 
 			?>
 			<div class="row <?=$rowData['CLASS']?>" data-entity="items-row">
