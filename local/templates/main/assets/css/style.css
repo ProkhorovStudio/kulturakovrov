@@ -4396,3 +4396,6 @@ footer .line-footer-soc a{
 	margin-bottom: 30px;
 	display: block;
 }
+.product-item-image-wrapper.bg-product-cart .product-item-image-slide.horizontal {
+	background-size: cover !important;
+}
