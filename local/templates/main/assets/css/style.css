@@ -4391,3 +4391,8 @@ footer .line-footer-soc a{
 	text-decoration: none;
 	color: #000000;
 }
+.dizayner-link {
+	text-decoration: none;
+	margin-bottom: 30px;
+	display: block;
+}
