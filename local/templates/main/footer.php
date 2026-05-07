@@ -151,7 +151,9 @@ if (!in_array($thisLink, $notView)): ?>
 
                     </div>
                 </div>
-
+<?
+    $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+?>
                 <div class="col-lg-3 col-md-6">
                     <p class="footer-ur-address d-md-none">Юридический адрес: 121151, Город Москва, вн.тер.г. муниципальный округ Дорогомилово, пр-кт Кутузовский, д. 24, помещ. 1А/1А<br>
                         ИНН: 9704075993<br> ОГРН: 1217700312488</p>
@@ -162,6 +164,7 @@ if (!in_array($thisLink, $notView)): ?>
                             <input type="text" name="NAME" placeholder="Ваше имя" required>
                             <input type="text" name="PHONE" placeholder="Номер телефона" required>
                             <input type="checkbox" id="politika" required>
+                            <input type="hidden" name="TYPE" class="type_form" value="Низ сайта(футер), страница <?=$url?>">
 
                             <label for="politika">
                                 <i></i>
@@ -265,6 +268,7 @@ if (!in_array($thisLink, $notView)): ?>
                 </div>
                 <input type="hidden" name="artKover" class="artKover">
                 <input type="hidden" name="titleKover" class="titleKover">
+                <input type="hidden" name="TYPE" class="type" value="Форма Узнать цену">
                 <div class="politika-line">
                     <input type="checkbox" id="politika" required>
                     <label for="politika">
@@ -299,17 +303,16 @@ if (!in_array($thisLink, $notView)): ?>
                 </div>
                 <input type="hidden" name="artKover" class="artKover">
                 <input type="hidden" name="titleKover" class="titleKover">
+                <input type="hidden" name="TYPE" class="type">
                 <div class="politika-line">
                     <input type="checkbox" id="politika" required>
                     <label for="politika">
                         Нажимая на кнопку "Отправить", я даю <a href="/soglasie-na-obrabotku-pd/" target="_blank">согласие на обработку моих
                             персональных данных</a>, в соответствии с <a href="/politika-pd/" target="_blank">политикой</a>
                     </label>
-
                 </div>
                 <input type="hidden" name="data-counter" value="form_free">
                 <button type="submit" class="button-form">Отправить</button>
-
             </form>
         </div>
     </div>

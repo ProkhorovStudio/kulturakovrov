@@ -103,7 +103,11 @@ $(document).on('click', '*[data-call]', function(e) {
     $('.modal.call .artKover').val(artikle);
     $('.modal.call .titleKover').val(name);
 
+    var type = $(this).attr('type');
 
+    if(type){
+        $('.modal.call .type').val(type);
+    }
 
     if(yainfo){
         $('.modal input[name="data-counter"]').val(yainfo);

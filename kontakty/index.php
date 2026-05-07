@@ -81,7 +81,15 @@ $APPLICATION->SetTitle("Контакты");
 					Ответим на ваши вопросы и подберем лучшее решение для вас
 				</div>
 				<form id="call" action="#" method="POST">
- <input type="text" name="NAME" placeholder="Ваше имя"> <input type="text" name="PHONE" placeholder="Номер телефона" required=""> <input type="checkbox" id="politika-contacts" required=""> <label for="politika-contacts"> <span>Нажимая на кнопку "Перезвоните мне", я даю <a href="/soglasie-na-obrabotku-pd/" target="_blank">согласие на обработку моих персональных данных</a>, в соответствии с <a href="#" target="_blank">политикой</a></span> </label> <input type="hidden" name="data-counter" value="form_free"> <button type="submit">Перезвоните мне</button>
+ <input type="text" name="NAME" placeholder="Ваше имя">
+                    <input type="text" name="PHONE" placeholder="Номер телефона" required="">
+                    <input type="checkbox" id="politika-contacts" required="">
+                    <label for="politika-contacts">
+                        <span>Нажимая на кнопку "Перезвоните мне", я даю <a href="/soglasie-na-obrabotku-pd/" target="_blank">согласие на обработку моих персональных данных</a>, в соответствии с <a href="#" target="_blank">политикой</a></span>
+                    </label>
+                    <input type="hidden" name="data-counter" value="form_free">
+                    <input type="hidden" name="TYPE" class="type_form" value="Страница Контакты">
+                    <button type="submit">Перезвоните мне</button>
 				</form>
 			</div>
 			<div class="d-md-none adress-info">
