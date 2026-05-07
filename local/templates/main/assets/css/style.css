@@ -3087,7 +3087,6 @@ div[data-slick-index="3"] .image-three{
 	font-size: 22px;
 	color: #2C2C2C;
 	margin-top: 20px;
-	margin-bottom: 30px;
 	font-weight: bold;
 }
 .dizayner-link{
@@ -4372,4 +4371,8 @@ footer .line-footer-soc a{
 }
 .product-item-image-wrapper.bg-product-cart .product-item-image-slide {
 	background-size: contain !important;
+}
+.dizayner-link .after-name {
+	font-size: 16px;
+	color: #000000;
 }
