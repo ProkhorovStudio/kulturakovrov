@@ -4399,3 +4399,14 @@ footer .line-footer-soc a{
 .product-item-image-wrapper.bg-product-cart .product-item-image-slide.horizontal {
 	background-size: cover !important;
 }
+.wrap-photo {
+	display: flex;
+	gap: 12px;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.wrap-photo img {
+	width: 32.5%;
+	object-fit: cover;
+}
