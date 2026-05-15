@@ -57,7 +57,7 @@ body.fixed header .right-block-new{
 	padding-top: 0;
 }
 body.fixed header .header-right{
-	margin-top: 20px;
+	margin-top: 9px;
 }
 .logo-header{
 	display: block;
@@ -102,7 +102,7 @@ header .right-block{
 header ul#horizontal-multilevel-menu.new-header-menu>li>a{
 	margin-right: 27px;
 }
-.soc-line-header a{
+.soc-line-header a {
 	width: 22px;
 	min-width: 22px;
 	height: 22px;
@@ -118,7 +118,6 @@ header ul#horizontal-multilevel-menu.new-header-menu>li>a{
 }
 .soc-line-header{
 	display: flex;
-	margin-top: 22px;
 }
 .soc-line-header .inst-header{
 	background: url('../images/inst.svg') no-repeat;
@@ -4409,4 +4408,57 @@ footer .line-footer-soc a{
 .wrap-photo img {
 	width: 32.5%;
 	object-fit: cover;
+}
+
+/*Шапка*/
+.bots-block{
+	display: flex;
+}
+.bots-block__right{
+	margin-top: 22px;
+}
+.bots-block .bot-header{
+	background: url('../icons/bot.svg') no-repeat;
+	margin-top: 2px;
+}
+.bots-block__left{
+	margin-top: 12px;
+}
+body.fixed header .bots-block__left{
+	margin-top: 8px;
+}
+
+body.fixed header .bots-block__right {
+	margin-top: 20px;
+}
+
+header .right-block-new{
+	display: flex;
+	justify-content: space-between;
+	padding-left: 64px;
+	padding-top: 29px;
+}
+.soc-line-header a.tg-header{
+	margin-right: 13px;
+}
+.soc-line-header a.dzen-header{
+	margin-right: 10px;
+}
+.right-block-new .header-right__search-icon{
+	margin-right: 11px;
+}
+.right-block-new .personal-link{
+	margin-right: 9px ;
+}
+.right-block-new .header-right__wish{
+	margin-right: 7px;
+}
+.right-block-new .header-right__cart{
+	margin-right: 4px;
+}
+.right-block-new .header-right{
+	margin-top: 4px;
+}
+.soc-line-header a.mt {
+	margin-top: 22px;
 }
