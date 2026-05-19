@@ -163,9 +163,9 @@ if (!in_array($thisLink, $notView)): ?>
                         <form id="call" class="footer-form__form">
                             <input type="text" name="NAME" placeholder="Ваше имя" required>
                             <input type="text" name="PHONE" placeholder="Номер телефона" required>
-                            <input type="checkbox" id="politika" required>
-                            <input type="hidden" name="TYPE" class="type_form" value="Низ сайта(футер), страница <?=$url?>">
 
+                            <input type="hidden" name="TYPE" class="type_form" value="Низ сайта(футер), страница <?=$url?>">
+                            <input type="checkbox" id="politika" required>
                             <label for="politika">
                                 <i></i>
                                 <span>Нажимая на кнопку "Перезвоните мне", я даю <a href="/soglasie-na-obrabotku-pd/" target="_blank">согласие на обработку моих

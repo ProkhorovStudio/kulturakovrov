@@ -1,6 +1,6 @@
 ../.DS_Store|||null|||1758010476|||6154
 ../.access.php|||null|||1758010855|||47
-../.bash_history|||null|||1778586400|||3571
+../.bash_history|||null|||1778841922|||3669
 ../.cache/motd.legal-displayed|||null|||1771310026|||0
 ../.gitconfig|||null|||1771310613|||69
 ../.gitignore|||null|||1773828493|||1034
@@ -15,13 +15,13 @@
 ../404.php|||null|||1769077915|||1457
 .htaccess|||null|||1772027598|||16
 index.php|||null|||1772029454|||11945
-log.txt|||null|||1778825522|||0
+log.txt|||null|||1779171050|||0
 ../apib24/checkserver.php|||null|||1758010476|||62
 ../apib24/crest.php|||null|||1758010476|||15586
 ../apib24/handler.php|||null|||1777551383|||6452
 ../apib24/index.php|||null|||1758010476|||1399
 ../apib24/install.php|||null|||1758010552|||1497
-../apib24/settings.json|||null|||1778824261|||752
+../apib24/settings.json|||null|||1779170461|||752
 ../apib24/settings.php|||null|||1758010476|||646
 ../ats/index.php|||null|||1758010476|||126
 ../auth/.section.php|||null|||1758010476|||77
@@ -30170,7 +30170,7 @@ log.txt|||null|||1778825522|||0
 ../bitrix/site_checker_0b88155388d9995f1276b49cf3c8f4f4.log|||null|||1763637167|||10631
 ../bitrix/site_checker_2ffe819c546e34726398e951b3cbbd03.log|||null|||1758010929|||9321
 ../bitrix/spread.php|||null|||1758010855|||76
-../bitrix/stack_cache/MYSQL/currency_currency_lang/06/06e86a31a9acbf1f2b244a314b769dc6.php|||null|||1778824729|||2202
+../bitrix/stack_cache/MYSQL/currency_currency_lang/06/06e86a31a9acbf1f2b244a314b769dc6.php|||null|||1779161478|||2202
 ../bitrix/templates/.default/ajax/ajax.css|||null|||1758010910|||448
 ../bitrix/templates/.default/ajax/ajax.min.css|||null|||1758010910|||420
 ../bitrix/templates/.default/components/bitrix/system.pagenavigation/blog/lang/en/template.php|||null|||1758010910|||143
@@ -31688,9 +31688,10 @@ log.txt|||null|||1778825522|||0
 ../local/templates/main/assets/css/owl.theme.default.css|||null|||1758010476|||1380
 ../local/templates/main/assets/css/slick-theme.css|||null|||1758010476|||3145
 ../local/templates/main/assets/css/slick.css|||null|||1758010476|||1776
-../local/templates/main/assets/css/style.css|||null|||1778583161|||85029
+../local/templates/main/assets/css/style.css|||null|||1778840725|||85916
 ../local/templates/main/assets/css/style.min.css|||null|||1758010476|||8048
 ../local/templates/main/assets/css/twin.css|||null|||1758010476|||1976
+../local/templates/main/assets/icons/bot.svg|||null|||1777470170|||1141
 ../local/templates/main/assets/icons/dzen-footer-mobile.svg|||null|||1767003941|||1400
 ../local/templates/main/assets/icons/dzen-footer.svg|||null|||1767002911|||1439
 ../local/templates/main/assets/icons/inst-footer-mobile.svg|||null|||1767003917|||4518
@@ -32574,9 +32575,9 @@ log.txt|||null|||1778825522|||0
 ../local/templates/main/components/ldo/catalog.section/section-list/themes/yellow/style.min.css|||null|||1758010476|||727
 ../local/templates/main/description.php|||null|||1758010476|||230
 ../local/templates/main/footer.php|||null|||1778162310|||28320
-../local/templates/main/header.php|||null|||1772723575|||104837
+../local/templates/main/header.php|||null|||1778840829|||108181
 ../local/templates/main/lang/ru/description.php|||null|||1758010476|||160
-../log.txt|||null|||1778785067|||94765083
+../log.txt|||null|||1779127707|||101983454
 ../marketplace/configuration/index.php|||null|||1758010476|||657
 ../o-kompanii/.left.menu.php|||null|||1773909984|||634
 ../o-kompanii/.section.php|||null|||1758010552|||74
